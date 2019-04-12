@@ -9,7 +9,7 @@ const Game = props => {
           <GameImage 
             key={image.id} 
             id={image.id} 
-            path={image.path}
+            src={image.src}
             handleClick={props.handleClick}
           />
         );
