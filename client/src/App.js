@@ -13,14 +13,14 @@ class App extends Component {
   shuffleImgs() {
     const imgArr = images.slice();
     const randomArr = [];
-    
+
     for (let i = imgArr.length - 1; i >= 0; i--) {
       let rand = Math.floor(Math.random() * i);
       randomArr.push(imgArr[rand]);
       imgArr.splice(rand, 1);
     }
     return randomArr;
-  }
+  };
 
   handleImageClick = event => {
     const id = parseInt(event.target.getAttribute("data-id"));
@@ -53,14 +53,16 @@ class App extends Component {
     return (
       <Fragment>
         <Header
-          score={this.state.score} 
+          score={this.state.score}
           length={images.length}
           handleClick={this.handleRestartClick}
         />
-        <Game 
-          images={this.state.images} 
-          handleClick={this.handleImageClick} 
-        />
+        <div className="container">
+          <Game
+            images={this.state.images}
+            handleClick={this.handleImageClick}
+          />
+        </div>
       </Fragment>
     );
   }
