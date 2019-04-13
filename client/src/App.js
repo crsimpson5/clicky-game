@@ -2,12 +2,16 @@ import React, { Component, Fragment } from 'react';
 import Header from "./components/Header";
 import Game from "./components/Game";
 import images from "./data/images";
+import Container from "react-bootstrap/Container";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import "./style.css";
 
 class App extends Component {
   state = {
     score: 0,
     chosenImgs: [],
+    showModal: false,
     images: this.shuffleImgs()
   }
 
@@ -29,16 +33,20 @@ class App extends Component {
     if (this.state.chosenImgs.length < images.length) {
       if (this.state.chosenImgs.includes(id)) {
         this.setState({
-          score: 0,
-          chosenImgs: []
+          showModal: true
         });
       } else {
         this.setState({
           score: this.state.score + 1,
           chosenImgs: this.state.chosenImgs.concat(id)
+        }, () => {
+          if (this.state.chosenImgs.length === images.length) {
+            this.setState({
+              showModal: true
+            });
+          }
         });
       }
-
       this.setState({ images: this.shuffleImgs() });
     }
   };
@@ -46,7 +54,9 @@ class App extends Component {
   handleRestartClick = () => {
     this.setState({
       score: 0,
-      chosenImgs: []
+      showModal: false,
+      chosenImgs: [],
+      images: this.shuffleImgs()
     });
   };
 
@@ -58,12 +68,36 @@ class App extends Component {
           length={images.length}
           handleClick={this.handleRestartClick}
         />
-        <div className="container">
+        <Container>
           <Game
             images={this.state.images}
             handleClick={this.handleImageClick}
           />
-        </div>
+        </Container>
+
+        <Modal show={this.state.showModal} onHide={this.handleRestartClick}>
+          <Modal.Header closeButton>
+            <Modal.Title></Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="text-center">
+            {this.state.chosenImgs.length < this.state.images.length ? (
+              <Fragment>
+                <h3>Game over!</h3>
+                <p>Score: {this.state.score}</p>
+              </Fragment>
+            ) : (
+              <h3>You win!</h3>
+            )}
+          </Modal.Body>
+          <Modal.Footer>
+            <div className="mx-auto">
+              <Button variant="primary" onClick={this.handleRestartClick}>
+                Play Again!
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+
       </Fragment>
     );
   }
