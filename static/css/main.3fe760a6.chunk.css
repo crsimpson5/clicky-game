@@ -1,0 +1,2 @@
+.game-card{width:200px;height:200px;border-radius:5px;background-color:#87cefa;margin:10px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;box-shadow:0 4px 8px 0 #a9a9a9}.game-img{max-width:100%;max-height:100%;padding:15px}.game-card:hover{cursor:pointer;-webkit-transform:scale(1.1);transform:scale(1.1);box-shadow:0 4px 8px 0 grey}@media (min-width:600px){.game-card{width:180px;height:180px}}
+/*# sourceMappingURL=main.3fe760a6.chunk.css.map */
