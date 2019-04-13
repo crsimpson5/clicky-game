@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Header from "./components/Header";
 import Game from "./components/Game";
 import images from "./data/images";
@@ -22,23 +22,46 @@ class App extends Component {
     return randomArr;
   }
 
-  handleClick = event => {
+  handleImageClick = event => {
     const id = parseInt(event.target.getAttribute("data-id"));
 
-    this.setState({ images: this.shuffleImgs() });
+    if (this.state.chosenImgs.length < images.length) {
+      if (this.state.chosenImgs.includes(id)) {
+        this.setState({
+          score: 0,
+          chosenImgs: []
+        });
+      } else {
+        this.setState({
+          score: this.state.score + 1,
+          chosenImgs: this.state.chosenImgs.concat(id)
+        });
+      }
+
+      this.setState({ images: this.shuffleImgs() });
+    }
+  };
+
+  handleRestartClick = () => {
+    this.setState({
+      score: 0,
+      chosenImgs: []
+    });
   };
 
   render() {
     return (
-      <div>
-        <Header 
+      <Fragment>
+        <Header
           score={this.state.score} 
+          length={images.length}
+          handleClick={this.handleRestartClick}
         />
         <Game 
           images={this.state.images} 
-          handleClick={this.handleClick} 
+          handleClick={this.handleImageClick} 
         />
-      </div>
+      </Fragment>
     );
   }
 }
