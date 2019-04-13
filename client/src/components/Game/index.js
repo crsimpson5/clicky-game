@@ -1,5 +1,6 @@
 import React from "react";
 import GameImage from "../GameImage";
+import "./style.css";
 
 const Game = props => {
   return (

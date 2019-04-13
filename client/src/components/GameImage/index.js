@@ -4,7 +4,7 @@ import "./style.css";
 const GameImage = props => {
   return (
     <div 
-      className="border border-dark game-card justify-content-center"
+      className="game-card justify-content-center"
       onClick={props.handleClick}
     >
       <img

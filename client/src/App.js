@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Header from "./components/Header";
 import Game from "./components/Game";
 import images from "./data/images";
+import "./style.css";
 
 class App extends Component {
   state = {
@@ -14,7 +15,7 @@ class App extends Component {
     const imgArr = images.slice();
     const randomArr = [];
 
-    for (let i = imgArr.length - 1; i >= 0; i--) {
+    for (let i = imgArr.length; i > 0; i--) {
       let rand = Math.floor(Math.random() * i);
       randomArr.push(imgArr[rand]);
       imgArr.splice(rand, 1);
