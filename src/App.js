@@ -97,7 +97,6 @@ class App extends Component {
             </div>
           </Modal.Footer>
         </Modal>
-
       </Fragment>
     );
   }
