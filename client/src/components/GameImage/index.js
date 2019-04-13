@@ -3,12 +3,17 @@ import "./style.css";
 
 const GameImage = props => {
   return (
-    <img
-      src={props.src}
-      alt={props.id}
+    <div 
+      className="border border-dark game-card justify-content-center"
       onClick={props.handleClick}
-      data-id={props.id}
-    />
+    >
+      <img
+        className="game-img"
+        src={props.src}
+        alt={props.id}
+        data-id={props.id}
+      />
+    </div>
   );
 };
 

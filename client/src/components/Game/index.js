@@ -3,9 +3,9 @@ import GameImage from "../GameImage";
 
 const Game = props => {
   return (
-    <div>
+    <div className="d-flex  flex-wrap justify-content-around">
       {props.images.map(image => {
-        return (
+        return ( 
           <GameImage 
             key={image.id} 
             id={image.id} 
