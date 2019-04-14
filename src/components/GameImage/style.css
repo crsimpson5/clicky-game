@@ -21,21 +21,13 @@
   box-shadow: 0 4px 8px 0 grey;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
   .game-card {
     width: 180px;
     height: 180px;
     margin: 15px;
   }
   .game-img {
-    padding: 15px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .game-card {
-    width: 200px;
-    height: 200px;
-    margin: 20px;
+    padding: 10px;
   }
 }
