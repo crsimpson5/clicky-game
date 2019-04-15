@@ -11,7 +11,7 @@ const Game = props => {
       <Row>
         <Col lg={1}></Col>
         <Col lg={10}>
-          <div className="d-flex  flex-wrap justify-content-around my-lg-4">
+          <div className="d-flex  flex-wrap justify-content-around mb-4 mt-lg-4">
             {props.images.map(image => {
               return (
                 <GameImage
