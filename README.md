@@ -7,3 +7,5 @@ Start by clicking on one of the images. Once clicked, the order of the images wi
 ### App info
 
 This app was created using React and React-Bootstrap.
+
+https://crsimpson5.github.io/clicky-game/
