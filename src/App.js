@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import Header from "./components/Header";
 import Game from "./components/Game";
 import images from "./data/images";
-import Container from "react-bootstrap/Container";
 import EndModal from "./components/EndModal";
 
 import "./style.css";

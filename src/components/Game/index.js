@@ -1,15 +1,17 @@
 import React from "react";
 import GameImage from "../GameImage";
 import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./style.css";
 
 const Game = props => {
   return (
     <Container>
-      <div className="row">
-        <div className="col-lg-1"></div>
-        <div className="col-lg-10">
-          <div className="d-flex  flex-wrap justify-content-around mt-4">
+      <Row>
+        <Col lg={1}></Col>
+        <Col lg={10}>
+          <div className="d-flex  flex-wrap justify-content-around my-lg-4">
             {props.images.map(image => {
               return (
                 <GameImage
@@ -21,8 +23,8 @@ const Game = props => {
               );
             })}
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </Container>
   );
 };
