@@ -1,11 +1,16 @@
 # Clicky Game
 
-### How to play
+## General Info
 
-Start by clicking on one of the images. Once clicked, the order of the images will  be randomized. The goal is to click all 12 characters one time. If you hit any of them a second time, it's game over!
+A game with the objective to click every character once. After a character is clicked, the order is randomized.
 
-### App info
+View deployed app: 
+[https://crsimpson5.github.io/clicky-game/](https://crsimpson5.github.io/clicky-game/)
 
-This app was created using React and React-Bootstrap and is mobile responsive.
+## Technologies
 
-https://crsimpson5.github.io/clicky-game/
+- HTML
+- CSS
+- JavaScript
+- React
+- React-Bootstrap
